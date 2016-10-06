@@ -1,3 +1,6 @@
+<<<<<<< HEAD
 print ("hello world";)
 print ("hello all";)
-print ("One more hello;")
+print ("One more hello";)
+print ("Hello my dear friend";)
+print ("Glad to see you";)
