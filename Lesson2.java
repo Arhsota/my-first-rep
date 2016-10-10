@@ -61,28 +61,32 @@ public class Lesson2 {
 
         //********************************************** homework, point 6. Console calculator
         int MyResult;
-        char[] buf = new char [4];
         Scanner sc = new Scanner(System.in);
-        System.out.println ("Please, Enter your string: ");
-        String myStr = sc.nextLine();
-        myStr.getChars (0,3,buf,0);
-    //    myStr = String.format ("%d",myStr);
-        switch (buf[1]) {
-            case  '+': {
-                MyResult = (int) (buf[0] - 48) + (int) (buf[2] - 48);
-                System.out.println(MyResult);
-                break;
+        System.out.println ("Please, Enter your string, using spaces: (Ex. 3 + 25)");
+        String myStr = sc.nextLine();                        //reading string from console
+        String[]  numbersArray = myStr.split(" ");           //splitting spaces in string array
+                switch (numbersArray[1]) {
+                case  "+": {
+                    MyResult = Integer.parseInt (numbersArray[0])  + Integer.parseInt (numbersArray[2]);
+                    System.out.println(MyResult);
+                    break;
+                }
+                case  "-": {
+                    MyResult = Integer.parseInt (numbersArray[0])  - Integer.parseInt (numbersArray[2]);
+                    System.out.println(MyResult);
+                    break;
+                }
+                case  "*": {
+                    MyResult = Integer.parseInt (numbersArray[0])  * Integer.parseInt (numbersArray[2]);
+                    System.out.println(MyResult);
+                    break;
+                }
+                case  "/": {
+                    MyResult = Integer.parseInt (numbersArray[0])  / Integer.parseInt (numbersArray[2]);
+                    System.out.println(MyResult);
+                    break;
+                }
             }
-            case  '-': {
-                MyResult = (int) (buf[0] - 48) - (int) (buf[2] - 48);
-                System.out.println(MyResult);
-                break;
-            }
-            case  '*': {
-                MyResult = (int) (buf[0] - 48) * (int) (buf[2] - 48);
-                System.out.println(MyResult);
-                break;
-            }
-        }
+
     }
 }
