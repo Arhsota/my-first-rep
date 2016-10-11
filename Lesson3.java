@@ -1,6 +1,7 @@
 /**
  *  Andrey Sevastyanov, author 11/10/2016 homework for lesson3, Java 1
  *  We should improve this software, this is homework task
+ * 4develope
  */
 
 import java.util.*;
