@@ -13,58 +13,68 @@ class Lesson5 {
     void work() {
         Animal[] arr = new Animal[3];
 
-        Animal dog = new Dog("Hound", "brown", true);
-        Animal horse = new Horse("Sivka", "red", true);
-        Animal cat = new Cat("Masya", "white", true);
+        Animal dog = new Dog("Dog", "brown", "Run");
+        Animal horse = new Horse("Horse", "red", "Run");
+        Animal cat = new Cat("Cat", "white", "Run");
 
         arr[0] = dog;
         arr[1] = horse;
         arr[2] = cat;
         for (Animal e : arr) {
-            System.out.println(e.name + ' ' + e.color + ' '+ e.doing());
+            System.out.println(e.name + ' ' + e.color + ' ' + e.action + " + "+ e.doing()+ " + "+ e.doingLimit());
         }
     }
  }
     abstract class Animal {
         protected String name;
         protected String color;
-        protected boolean action;
+        protected String action;
 
-        Animal(String name, String color, boolean action) { // конструктор c 3 параметрами
+        Animal(String name, String color, String action) { // конструктор c 3 параметрами
             this.name = name;
             this.color = color;
             this.action = action;
         }
           abstract String doing();
+          abstract String doingLimit();
     }
 
     class Dog extends Animal {
-        Dog(String name, String color, boolean action) {
+        Dog(String name, String color, String action) {
             super(name, color, action);
         }
         @Override
         String doing(){
             return "Jump";
         }
+        String doingLimit(){
+            return "But Jump Only 2 meters!";
+        }
     }
 
     class Horse extends Animal {
-        Horse(String name, String color, boolean action) {
+        Horse(String name, String color, String action) {
             super(name, color, action);
         }
         @Override
         String doing(){
             return "Swim";
+         }
+        String doingLimit(){
+            return "But Couldn't Jump!";
         }
     }
 
     class Cat extends Animal {
-        Cat(String name, String color, boolean action) {
+        Cat(String name, String color, String action) {
             super(name, color, action);
         }
         @Override
         String doing(){
             return "Mewweo";
+        }
+        String doingLimit(){
+            return "But couldn't swim!";
         }
 
     }
